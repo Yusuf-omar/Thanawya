@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نتيجة الثانوية العامة — بحث بالاسم أو رقم الجلوس</title>
+  <meta name="description" content="ابحث عن نتيجة الثانوية العامة المصرية بالاسم الكامل أو رقم الجلوس. النظام الحديث والنظام القديم." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <span>🎓</span>
+        <span>ثانوية عامة</span>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="تغيير الوضع">
+        <span class="theme-icon theme-icon--moon">🌙</span>
+        <span class="theme-icon theme-icon--sun">☀️</span>
+      </button>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero__title">نتيجة الثانوية العامة</h1>
+      <p class="hero__subtitle">ابحث بالاسم أو رقم الجلوس</p>
+    </section>
+
+    <!-- System Selection -->
+    <div class="system-selection" id="system-selection">
+      <button class="system-card glass" id="btn-modern" type="button" data-system="modern">
+        <span class="system-card__icon">📘</span>
+        <span class="system-card__label">النظام الحديث</span>
+        <span class="system-card__desc">Modern System</span>
+      </button>
+      <button class="system-card glass" id="btn-old" type="button" data-system="old">
+        <span class="system-card__icon">📗</span>
+        <span class="system-card__label">النظام القديم</span>
+        <span class="system-card__desc">Old System</span>
+      </button>
+    </div>
+
+    <!-- Search Section -->
+    <section class="search-section hidden" id="search-section">
+      <div class="search-mode" id="search-mode">
+        <button class="search-mode__btn active" type="button" data-mode="name" id="btn-mode-name">
+          البحث بالاسم الكامل
+        </button>
+        <button class="search-mode__btn" type="button" data-mode="seat" id="btn-mode-seat">
+          البحث برقم الجلوس
+        </button>
+      </div>
+      <div class="search-box">
+        <input
+          class="search-input"
+          id="search-input"
+          type="text"
+          placeholder="اكتب الاسم الكامل..."
+          autocomplete="off"
+        />
+        <button class="search-btn" id="search-btn" type="button">بحث</button>
+      </div>
+    </section>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <span class="loader__text">جاري تحميل البيانات...</span>
+    </div>
+
+    <!-- Empty State -->
+    <div class="message-state" id="empty-state">
+      <span class="message-state__icon">🔍</span>
+      <span class="message-state__text">لم يتم العثور على نتيجة</span>
+      <span class="message-state__sub">تأكد من صحة البيانات وحاول مرة أخرى</span>
+    </div>
+
+    <!-- Error State -->
+    <div class="message-state message-state--error" id="error-state">
+      <span class="message-state__icon">⚠️</span>
+      <span class="message-state__text">حدث خطأ أثناء تحميل البيانات</span>
+      <span class="message-state__sub">يرجى التحقق من الاتصال والمحاولة مرة أخرى</span>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+      <div class="results-count" id="results-count"></div>
+      <div id="results-list"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      للاستخدام الشخصي فقط &copy; <span id="year"></span>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
